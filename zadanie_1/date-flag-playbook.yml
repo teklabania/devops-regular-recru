@@ -1,0 +1,12 @@
+---
+- name: Playbook name
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Create date_flagg file
+      lineinfile:
+        dest: /tmp/date_flag
+        line: "{{ ansible_date_time.date }}"
+        create: true
+        mode: 0644
